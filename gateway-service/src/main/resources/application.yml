@@ -1,0 +1,25 @@
+server:
+  port: 8080
+  
+zuul:
+  routes:
+    user-service:
+      path: /users/**
+      url: http://localhost:8081
+      stripPrefix: false
+    user-service-doc:
+      path: /user-docs/**
+      url: http://localhost:8081
+      stripPrefix: true
+    product-service:
+      path: /products/**
+      url: http://localhost:8082
+      stripPrefix: false
+    product-service-doc:
+      path: /product-docs/**
+      url: http://localhost:8082
+      stripPrefix: true
+      
+eureka:
+  client:
+    enabled: false
