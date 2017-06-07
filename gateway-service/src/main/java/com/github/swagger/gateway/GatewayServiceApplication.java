@@ -1,5 +1,7 @@
 package com.github.swagger.gateway;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
@@ -18,40 +20,44 @@ import com.netflix.zuul.context.RequestContext;
 public class GatewayServiceApplication {
 
     public static void main(String[] args) {
-	
+
 	SpringApplication.run(GatewayServiceApplication.class, args);
     }
-    
+
     @Bean
     public ZuulFilter requestLoggingFilter() {
+
 	return new RequestLoggingFilter();
     }
-    
+
     public static class RequestLoggingFilter extends ZuulFilter {
 
 	private static final Logger LOG = LoggerFactory.getLogger(RequestLoggingFilter.class);
-	
+
 	@Override
 	public Object run() {
-	    
-	    String uri = RequestContext.getCurrentContext().getRequest().getRequestURI();
-	    
-	    LOG.info("request {}", uri);
+
+	    HttpServletRequest req = RequestContext.getCurrentContext().getRequest();
+
+	    LOG.info("{} {}", req.getMethod(), req.getRequestURI());
 	    return null;
 	}
 
 	@Override
 	public boolean shouldFilter() {
+
 	    return true;
 	}
 
 	@Override
 	public int filterOrder() {
+
 	    return 0;
 	}
 
 	@Override
 	public String filterType() {
+
 	    return "pre";
 	}
     }

@@ -11,29 +11,28 @@ import org.springframework.web.bind.annotation.RestController;
 import com.github.swagger.user.model.User;
 
 @RestController
-@RequestMapping("/users")
+@RequestMapping("/api/users")
 public class UserController {
 
-    
     @RequestMapping(method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.CREATED)
     public User createUser(@RequestBody User user) {
 
 	return user;
     }
-    
+
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public User getUser(@PathVariable String id) {
 
 	return new User(id, "hemant");
     }
-    
+
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deleteUser(@RequestBody User user, @PathVariable String id) {
+    public void deleteUser(@PathVariable String id) {
 
     }
-    
+
     @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
     public User updateUser(@RequestBody User user, @PathVariable String id) {
 

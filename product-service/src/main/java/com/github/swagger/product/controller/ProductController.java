@@ -11,29 +11,28 @@ import org.springframework.web.bind.annotation.RestController;
 import com.github.swagger.product.model.Product;
 
 @RestController
-@RequestMapping("/products")
+@RequestMapping("/api/products")
 public class ProductController {
 
-    
     @RequestMapping(method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.CREATED)
     public Product createProduct(@RequestBody Product product) {
 
 	return product;
     }
-    
+
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public Product getProduct(@PathVariable String id) {
 
 	return new Product(id, "swagger-product");
     }
-    
+
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deleteProduct(@RequestBody Product product, @PathVariable String id) {
+    public void deleteProduct(@PathVariable String id) {
 
     }
-    
+
     @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
     public Product updateProduct(@RequestBody Product product, @PathVariable String id) {
 

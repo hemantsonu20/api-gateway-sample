@@ -15,16 +15,19 @@ public class CustomSwaggerResourcesProvider implements SwaggerResourcesProvider 
 
     @Override
     public List<SwaggerResource> get() {
+
 	return swaggerResourcesList();
     }
 
     private List<SwaggerResource> swaggerResourcesList() {
 
-	return Arrays.asList(swaggerResource("/user-service", "/user-docs/v2/api-docs"),
-		swaggerResource("/product-service", "/product-docs/v2/api-docs"));
+	return Arrays.asList(
+		swaggerResource("user-service", "/user-service/v2/api-docs"),
+		swaggerResource("product-service", "/product-service/v2/api-docs"));
     }
 
     private SwaggerResource swaggerResource(String name, String location) {
+
 	SwaggerResource resource = new SwaggerResource();
 	resource.setName(name);
 	resource.setLocation(location);
