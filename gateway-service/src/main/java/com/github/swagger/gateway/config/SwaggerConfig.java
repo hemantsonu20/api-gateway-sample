@@ -1,4 +1,4 @@
-package com.github.swagger.product.config;
+package com.github.swagger.gateway.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
