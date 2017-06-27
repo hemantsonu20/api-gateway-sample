@@ -18,6 +18,6 @@ Gateway Service proxies the request to different micro services based on the req
 Clone this repository, and run all three micro services (gateway, product and user).
 * Open http://localhost:8081 in a browser, it will redirect to user service swagger ui page.
 * Open http://localhost:8082 in a browser, it will redirect to product service swagger ui page.
-* Open http://localhost:8080 in a browser, it will redirect to gateway service swagger ui page. One important thing to note that, gateway service doesn't have their own apis, so its swagger ui page will list all the micorservices swagger ui page. So from one place we can test all our micro services.<br/>
+* Open http://localhost:8080 in a browser, it will redirect to gateway service swagger ui page. One important thing to note that, gateway service doesn't have their own apis, so its swagger ui page will list all the micorservices swagger ui page. So from one place we can test all our micro services.<br/><br/>
 ![Gateway](docs/gateway-swagger.png)
 
