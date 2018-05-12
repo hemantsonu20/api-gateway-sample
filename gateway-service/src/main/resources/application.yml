@@ -5,11 +5,11 @@ zuul:
   routes:
     user-service:
       path: /user-service/**
-      url: http://localhost:8081
+      url: http://localhost:8082
       stripPrefix: true
     product-service:
       path: /product-service/**
-      url: http://localhost:8082
+      url: http://localhost:8084
       stripPrefix: true
       
 eureka:
