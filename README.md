@@ -1,4 +1,4 @@
-# swagger-zuul-sample
+# api-gateway-sample
 
 This repository integrates following into micro services architechture based on spring boot.
 * Swagger for automatic nice doc generation of the rest apis exposed.
