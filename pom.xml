@@ -16,7 +16,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <java.version>1.8</java.version>
     <commons.lang.version>3.0</commons.lang.version>
-    <springfox.version>2.7.0</springfox.version>
+    <springfox.version>2.10.0</springfox.version>
   </properties>
   <dependencies>
     <dependency>
